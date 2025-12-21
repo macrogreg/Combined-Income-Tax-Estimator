@@ -1,7 +1,5 @@
 # Combined Income Tax Estimator
-
 An Excel spreadsheet to calculate all common US income taxes combined together.
-
 
 ## Purpose 
 This spreadsheet helps you quickly estimate your total federal tax liability
@@ -20,21 +18,23 @@ slightly overestimate (and get a refund) than underestimate (and face penalties)
 
 ## How to use
 
-**Get your own private copy of the calculator**:  
+**1. Get your own private copy of the calculator**:  
   - Open the Live Version (read only):  
     https://1drv.ms/x/c/08eb2a76c904b8dc/IQCMrEsP03QDRLPI3ksnaDAuAcRx6UwKOTx7GlYUYHCIPRs
   - Create your own copy:  
     Got to `File` > `Create a Copy`.  
     To use with Excel for Desktop (Windows or Mac), select `Download a Copy`.  
-    To use with Excel Online (free), select `Create a copy online`.  
+    To use with Excel Online (free), select `Create a copy online`.
+  - Alternatively, download the calculator Excel file directly from the GitHub repo:   
+    [./Combined Tax Estimator.xlsx](./Combined%20Tax%20Estimator.xlsx)
 
-**Input Your Income ('Estomator' tab, _orange_ cells only)**:
+**2. Input Your Income ('Estomator' tab, _orange_ cells only)**:
   - Enter your estimated income in section 'Your extimated income'.
   - Each income category has 3 input fields. Use them however you like (they're simply added together).
   - Only edit _orange_ cells. All other cells are auto-computed.
   - Some input cells are pre-filled with sample values. Make sure to override with your values.
 
-**Review Your Results**:
+**3. Review Your Results**:
   - **'Total Tax Summary' section:** View estimated tax by type and your total.
   - **Detail sections below**: See exactly how each tax is calculated.
   - **'Parameters' tab**: Reference tax rates and brackets for each year.
