@@ -8,15 +8,66 @@
         <title>Combined US Income Tax Estimator</title>
     </head>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NH9X4R54Y"></script>
+    <!-- Umami Analytics does not use cookies. We also do not collect PII. No explicit consent is required. -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "G-1NH9X4R54Y");
+        // Activate analytics collection:
+        (function () {
+            const host = window.location.hostname;
+            const isLocalhost =
+                host === "localhost" ||
+                host === "localhost." ||
+                host.endsWith(".localhost") ||
+                host === "::1" ||
+                host === "0.0.0.0" ||
+                host === "127.0.0.1" ||
+                host.indexOf("127.") === 0 ||
+                host.indexOf("::ffff:127.") === 0;
+
+            const protocol = window.location.protocol;
+            const isFile = protocol === "file:";
+
+            const tagVal = isFile ? "LocalFile" : isLocalhost ? "Localhost" : host;
+            const tagStr = "page-host-" + tagVal;
+
+            var umamiScript = document.createElement("script");
+            umamiScript.defer = true;
+            umamiScript.src = "https://cloud.umami.is/script.js";
+            umamiScript.setAttribute("data-website-id", "d07b4136-3660-4dc1-97ae-1c86beafb5d2");
+            umamiScript.setAttribute("data-tag", tagStr);
+
+            (document.head || document.body || document.documentElement).appendChild(umamiScript);
+        })();
+
+        // Track all clicked links, including links to images and to external items:
+        document.addEventListener("click", function (e) {
+            const clickedAElement = e.target.closest("a");
+            if (!clickedAElement) {
+                return;
+            }
+
+            if (!window.umami || typeof window.umami.track !== "function") {
+                console.error("Link was clicked, but will not be tracked, because Umami tracking is not initialized.");
+                return;
+            }
+
+            const removePrefix = (str, pref, replace) => {
+                if (typeof str !== "string") return str;
+                if (typeof pref !== "string") return str;
+                if (!replace) replace = "";
+                return str.startsWith(pref) ? replace + str.slice(pref.length) : str;
+            };
+
+            const hrefAttr = clickedAElement.getAttribute("href") || "href-not-set";
+            var hrefAddr = hrefAttr;
+            hrefAddr = removePrefix(hrefAddr, "https://github.com/macrogreg/Combined-Income-Tax-Estimator/", "GitHub-Repo/");
+            hrefAddr = removePrefix(hrefAddr, "https://1drv.ms/", "OneDrive/");
+            hrefAddr = removePrefix(hrefAddr, "https://");
+            hrefAddr = removePrefix(hrefAddr, "http://");
+
+            umami.track("Link Clicked", {
+                href: hrefAddr,
+            });
+        });
     </script>
 
     <body>
@@ -61,7 +112,11 @@
                         <ul>
                             <li>
                                 Open the Live Version (read only):<br />
-                                <a target="_blank" href="https://1drv.ms/x/c/08eb2a76c904b8dc/IQCMrEsP03QDRLPI3ksnaDAuAcRx6UwKOTx7GlYUYHCIPRs"
+                                <a
+                                    target="_blank"
+                                    href="https://1drv.ms/x/c/08eb2a76c904b8dc/IQCMrEsP03QDRLPI3ksnaDAuAcRx6UwKOTx7GlYUYHCIPRs"
+                                    data-umami-event="Open Live Calculator"
+                                    data-umami-event-DocVersion="25-12-20"
                                     >https://1drv.ms/x/c/08eb2a76c904b8dc/IQCMrEsP03QDRLPI3ksnaDAuAcRx6UwKOTx7GlYUYHCIPRs</a
                                 >
                                 <div style="font-size: smaller; margin: 5px 0 10px 0">
@@ -79,6 +134,8 @@
                                             Alternatively, download the calculator Excel file directly from the GitHub repo. [<a
                                                 target="_blank"
                                                 href="https://github.com/macrogreg/Combined-Income-Tax-Estimator/blob/master/Combined%20Tax%20Estimator.xlsx"
+                                                data-umami-event="Open Calculator File on GH"
+                                                data-umami-event-DocVersion="25-12-20"
                                                 >Combined Tax Estimator.xlsx</a
                                             >]
                                         </div>
@@ -108,7 +165,7 @@
                         </ul>
                         <div style="text-align: center">
                             <a target="_blank" href="./images/screen_input_income.jpg">
-                                <img alt="Screenshot: Enter estimated income" src="./images/screen_input_income.jpg" height="130" class="embed-screenshot" />
+                                <img alt="Screenshot: Enter estimated income" src="./images/screen_input_income.jpg" height="140" class="embed-screenshot" />
                             </a>
                         </div>
                     </li>
@@ -122,7 +179,7 @@
                         </ul>
                         <div style="text-align: center">
                             <a target="_blank" href="./images/screen_tax_summary.jpg">
-                                <img alt="Screenshot: Review estimated tax" src="./images/screen_tax_summary.jpg" height="130" class="embed-screenshot" />
+                                <img alt="Screenshot: Review estimated tax" src="./images/screen_tax_summary.jpg" height="140" class="embed-screenshot" />
                             </a>
                         </div>
                     </li>
@@ -167,7 +224,7 @@
                 &nbsp; | &nbsp;
                 <a target="_blank" href="https://github.com/macrogreg/Combined-Income-Tax-Estimator/blob/master/LICENSE">License</a>
                 &nbsp; | &nbsp;
-                <a target="_blank" href="https://macrogreg.github.io/Combined-Income-Tax-Estimator/#tool-is-not-qualified-tax-advice">Important disclaimer</a>
+                <a target="_blank" href="#tool-is-not-qualified-tax-advice">Important disclaimer</a>
             </div>
             <!-- id="footer" -->
         </div>
