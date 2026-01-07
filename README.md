@@ -8,6 +8,8 @@ This calculator **quickly** estimates your total federal tax liability.
 It properly combines the **most common tax types** for employed individuals **in one place**.  
 Most other tax estimators focus only on one tax type (e.g., federal income tax only), or ask a ton of detailed questions that take forever to answer.
 
+Included taxes:
+
 - Federal Income Tax (including Alternative Minimum Tax (AMT))
 - Long-Term Capital Gains Tax
 - Social Security Tax
