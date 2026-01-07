@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="title" content="Combined US Income Tax Estimator" />
+        <link href="html_inc/common.css" rel="stylesheet" type="text/css" />
+
+        <title>Combined US Income Tax Estimator</title>
+    </head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NH9X4R54Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-1NH9X4R54Y");
+    </script>
+
+    <body>
+        <div id="wrapper">
+            <div id="header"></div>
+            <!-- id="header" -->
+
+            <div id="content">
+                <h1 style="padding-top: 10px">Combined Federal Income Tax Estimator</h1>
+
+                <p><b>An Excel spreadsheet to calculate all common US income taxes combined together.</b></p>
+
+                <h2>Purpose</h2>
+
+                <p>
+                    This calculator <u>quickly</u> estimates your total federal tax liability.<br />
+                    It properly combines the <u>most common tax types</u> for employed individuals <u>in one place</u>.
+                </p>
+                <p>
+                    (Most other tax estimators focus only on one tax type (e.g., federal income tax only), or ask a ton of detailed questions that take forever
+                    to answer.)
+                </p>
+                <ul>
+                    <li>Federal Income Tax (including Alternative Minimum Tax (AMT))</li>
+                    <li>Long-Term Capital Gains Tax</li>
+                    <li>Social Security Tax</li>
+                    <li>Medicare Taxes (including Additional Medicare Tax and NIIT)</li>
+                </ul>
+
+                <p>
+                    <b>Philosophy</b>: This is an estimation tool, not a precise calculator. It intentionally omits some deductions to keep things simple. It's
+                    better to slightly overestimate (and get a refund) than underestimate (and face penalties).
+                </p>
+
+                <div class="top-line">[ <a href="#" title="Top of Page">ToP</a> ]</div>
+
+                <h2>How to use</h2>
+
+                <ol>
+                    <li>
+                        <b>Get your own private copy of the calculator:</b>
+                        <ul>
+                            <li>
+                                Open the Live Version (read only):<br />
+                                <a target="_blank" href="https://1drv.ms/x/c/08eb2a76c904b8dc/IQCMrEsP03QDRLPI3ksnaDAuAcRx6UwKOTx7GlYUYHCIPRs"
+                                    >https://1drv.ms/x/c/08eb2a76c904b8dc/IQCMrEsP03QDRLPI3ksnaDAuAcRx6UwKOTx7GlYUYHCIPRs</a
+                                >
+                                <div style="font-size: smaller; margin: 5px 0 10px 0">
+                                    [<a target="_blank" href="./images/screen_overview.jpg">Show Preview</a>]
+                                </div>
+                            </li>
+                            <li>
+                                Create your own copy:<br />
+                                Go to `<code>File</code>` > `<code>Create a Copy</code>`.
+                                <ul>
+                                    <li>To use with <b>Excel Online</b> (free): select `<code>Create a copy online</code>`.</li>
+                                    <li>
+                                        To use with <b>Excel for Desktop</b> (Windows or Mac): select `<code>Download a Copy</code>`.<br />
+                                        <div style="font-size: smaller">
+                                            Alternatively, download the calculator Excel file directly from the GitHub repo. [<a
+                                                target="_blank"
+                                                href="https://github.com/macrogreg/Combined-Income-Tax-Estimator/blob/master/Combined%20Tax%20Estimator.xlsx"
+                                                >Combined Tax Estimator.xlsx</a
+                                            >]
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div style="text-align: center">
+                            <a target="_blank" href="./images/screen_create_copy_online.jpg">
+                                <img
+                                    alt="Screenshot: Create your own copy of this calculator"
+                                    src="./images/screen_create_copy_online.jpg"
+                                    height="130"
+                                    class="embed-screenshot"
+                                />
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <b>Input Your Income ('Estimator' tab, <i>orange</i> cells only):</b>
+                        <ul>
+                            <li>Enter your estimated income in section 'Your estimated income'.</li>
+                            <li>Each income category has 3 input fields. Use them however you like (they're simply added together).</li>
+                            <li>Only edit <i>orange</i> cells. All other cells are auto-computed.</li>
+                            <li>Some input cells are pre-filled with sample values. Make sure to override with your own values.</li>
+                        </ul>
+                        <div style="text-align: center">
+                            <a target="_blank" href="./images/screen_input_income.jpg">
+                                <img alt="Screenshot: Enter estimated income" src="./images/screen_input_income.jpg" height="130" class="embed-screenshot" />
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <b>Review Your Results:</b>
+                        <ul>
+                            <li><b>'Total Tax Summary' section:</b> View estimated tax by type and your total.</li>
+                            <li><b>Detail sections below:</b> See exactly how each tax is calculated.</li>
+                            <li><b>'Parameters' tab:</b> Reference tax rates and brackets for each year.</li>
+                        </ul>
+                        <div style="text-align: center">
+                            <a target="_blank" href="./images/screen_tax_summary.jpg">
+                                <img alt="Screenshot: Review estimated tax" src="./images/screen_tax_summary.jpg" height="130" class="embed-screenshot" />
+                            </a>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="top-line">[ <a href="#" title="Top of Page">ToP</a> ]</div>
+
+                <h3>Tax types not considered</h3>
+                <ul>
+                    <li>State and local taxes.</li>
+                    <li>Self-Employment Tax.</li>
+                    <li>
+                        Some nuances of Alternative Minimum Tax (AMT), such as Incentive Stock Options (ISO) exercise tax.<br />
+                        (This can significantly impact the AMT. There may be other AMT nuances that are not considered.)
+                    </li>
+                    <li>There may be others, so focus on what is explicitly covered (see above).</li>
+                </ul>
+
+                <div class="top-line">[ <a href="#" title="Top of Page">ToP</a> ]</div>
+
+                <h3 id="tool-is-not-qualified-tax-advice">⚠️ This calculator is not a qualified tax advice.</h3>
+                <p>
+                    This tool is for estimation purposes only. It should be reasonably accurate for ~90% of employed individuals.<br />
+                    The calculator accounts for common income types, such as W-2, capital gains, rental income, and others.
+                </p>
+                <p>For fully reliable tax calculations, especially for complex tax situations, always consult a qualified tax professional!</p>
+
+                <div class="top-line">[ <a href="#" title="Top of Page">ToP</a> ]</div>
+
+                <h2>Questions & Contact</h2>
+
+                <p>
+                    To ask a question or contact the author,
+                    <a target="_blank" href="https://github.com/macrogreg/Combined-Income-Tax-Estimator/issues">submit an Issue on GitHub</a>.
+                </p>
+            </div>
+            <!-- id="content" -->
+
+            <div id="footer">
+                <hr />
+                <a target="_blank" href="https://github.com/macrogreg/Combined-Income-Tax-Estimator">This project on GitHub</a>
+                &nbsp; | &nbsp;
+                <a target="_blank" href="https://github.com/macrogreg/Combined-Income-Tax-Estimator/blob/master/LICENSE">License</a>
+                &nbsp; | &nbsp;
+                <a target="_blank" href="https://macrogreg.github.io/Combined-Income-Tax-Estimator/#tool-is-not-qualified-tax-advice">Important disclaimer</a>
+            </div>
+            <!-- id="footer" -->
+        </div>
+        <!-- id="wrapper" -->
+    </body>
+</html>
