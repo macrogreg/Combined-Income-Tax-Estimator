@@ -30,7 +30,7 @@ body {
   color: #6677ff;
   text-align: center;
 }
-#footer hr {
+hr {
   margin: 5px 10px 10px 10px;
   height: 1px;
   color: #ccddff;
