@@ -7,6 +7,35 @@
 
         <title>Combined US Income Tax Estimator</title>
         <script src="html_inc/useUmamiAnalytics.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const loadingInfoDiv = document.getElementById("loading-info");
+                const iframe = document.getElementById("embedded-calc-iframe");
+
+                // Show initial loading message when iframe starts loading
+                loadingInfoDiv.textContent = "Initializing Excel document frame.";
+                loadingInfoDiv.style.margin = "5px";
+                loadingInfoDiv.style.padding = "5px";
+
+                // When iframe loads
+                iframe.addEventListener("load", function () {
+                    loadingInfoDiv.textContent = "Excel document frame initialized. Calculator may take another minute to load.";
+
+                    // Start timer
+                    setTimeout(function () {
+                        loadingInfoDiv.textContent =
+                            "If calculator is still loading, give it another 30 secs and refresh the page. Otherwise, ignore this message.";
+
+                        // After delay, clear the message
+                        setTimeout(function () {
+                            loadingInfoDiv.textContent = "";
+                            loadingInfoDiv.style.margin = "0";
+                            loadingInfoDiv.style.padding = "0";
+                        }, 15000);
+                    }, 5000);
+                });
+            });
+        </script>
     </head>
 
     <body>
@@ -15,6 +44,11 @@
                 <h1 style="padding-top: 10px">Combined Federal Income Tax Estimator</h1>
 
                 <p>An Excel spreadsheet to calculate all common US income taxes combined together.</p>
+
+                <div
+                    id="loading-info"
+                    style="text-align: center; font-size: smaller; font-weight: bolder; color: #6677ff; background-color: #ccddff; margin: 0; padding: 0"
+                ></div>
 
                 <div style="text-align: center">
                     <a target="_blank" href="./index.html#how-to-use">Instructions</a>
@@ -29,6 +63,7 @@
                 <hr />
 
                 <iframe
+                    id="embedded-calc-iframe"
                     title="Embedded Combined Federal Income Tax Estimator"
                     style="
                         width: calc(100% - 20px);
